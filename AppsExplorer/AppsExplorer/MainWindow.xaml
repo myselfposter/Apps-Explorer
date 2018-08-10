@@ -1,0 +1,218 @@
+﻿<Controls:MetroWindow x:Class="AppsExplorer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:dragdrop="clr-namespace:GongSolutions.Wpf.DragDrop;assembly=GongSolutions.Wpf.DragDrop"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppsExplorer"
+        xmlns:Properties="clr-namespace:AppsExplorer.Properties"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Apps Explorer" Height="800" Width="1200" TitleCharacterCasing="Normal" Closing="MetroWindow_Closing">
+
+    <Controls:MetroWindow.IconTemplate><!--程序图标-->
+        <DataTemplate>
+            <Grid Width="{TemplateBinding Width}"
+                 Height="{TemplateBinding Height}"
+                 Margin="5"
+                 Background="Transparent"
+                 RenderOptions.EdgeMode="Aliased"
+                 RenderOptions.BitmapScalingMode="HighQuality">
+                <Rectangle>
+                    <Rectangle.Fill>
+                        <VisualBrush Visual="{iconPacks:Modern Kind=Home,Flip=Both,Rotation=180}" />
+                    </Rectangle.Fill>
+                </Rectangle>
+            </Grid>
+        </DataTemplate>
+    </Controls:MetroWindow.IconTemplate>
+
+    <Controls:MetroWindow.LeftWindowCommands><!--标题栏加一个按钮-->
+        <Controls:WindowCommands>
+            <Button Click="LaunchAppsExplorerOnGitHub" ToolTip="Apps Explorer on GitHub">
+                <iconPacks:PackIconModern Width="22"
+                                          Height="22"
+                                          Kind="SocialGithubOctocat" />
+            </Button>
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.LeftWindowCommands>
+
+    <Grid Name="mainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <!-- 主框架开始 -->
+        <!--菜单栏区定义-->
+
+        <Menu Margin="20,5,5,5" HorizontalAlignment="Left" VerticalAlignment="Stretch" Grid.Row="0" FontWeight="Bold" FontSize="18"><!--菜单栏区定义-->
+            <MenuItem Header="File" Icon="{iconPacks:Material Kind=File}" Margin="0,1,10,1" >
+                <MenuItem Header="Load From Package" Click="LoadAppsGroupPackage_Click" FontSize="14" FontWeight="Bold" 
+                          Icon="{iconPacks:Material Kind=FolderOpen}" ToolTip="Load APPs resources from a package(.appPckZip)"/>
+                <MenuItem Header="Save As Package" Click="SaveAppsGroupPackage_Click" FontSize="14" FontWeight="Bold"
+                          Icon="{iconPacks:Entypo Kind=Save}" ToolTip="Save current AppsExplorer resources as a package(.appPckZip)"/>
+                <Separator />
+                <MenuItem Header="Quit" Click="exitForm_Click" FontSize="14" FontWeight="Bold"
+                          Icon="{iconPacks:Material Kind=CloseBox}" ToolTip="Quit AppsExplorer"/>
+            </MenuItem>
+
+
+            <MenuItem Header="Apps" FontWeight="Bold" Icon="{iconPacks:Material Kind=Map}" Margin="30,1,10,1">
+                <MenuItem Header="Add New Apps Group" Click="AddNewAppsGroup_Click" FontSize="14" FontWeight="Bold"
+                          Icon="{iconPacks:Material Kind=GooglePlusBox}" ToolTip="Add a new empty Apps Group for adding new app items"/>
+                <Separator />
+                <MenuItem Header="Make New App" Click="MakeNewApp_Click" FontSize="14" FontWeight="Bold"
+                          Icon="{iconPacks:Material Kind=NewBox}" ToolTip="Make a new App(.appZip) from an existing APP project."/>
+                <MenuItem Header="Add New App" FontSize="14" FontWeight="Bold"
+                          Icon="{iconPacks:Material Kind=PlusBox}">
+                    <MenuItem Header="Load From .appZip File" Click="LoadFromappZip_Click" FontSize="14" FontWeight="Bold"
+                          ToolTip="Load a new App from .appZip format file."/>
+                    <MenuItem Header="Load From Existing File" Click="LoadFromFile_Click" FontSize="14" FontWeight="Bold"
+                          ToolTip="Load a new App from file." />
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="Save Current APPs Layout" Click="saveCurrentAppsLayout_Click" FontSize="14" FontWeight="Bold"
+                          Icon="{iconPacks:Material Kind=ContentSaveSettings}" ToolTip="Click to save current Apps layout(including AppsGroups and AppItems). [Auto Save function can be set in settings.]"/>
+            </MenuItem>
+
+            <MenuItem Header="About" FontWeight="Bold" Icon="{iconPacks:Material Kind=Information}" Margin="30,1,10,1">
+                <MenuItem Header="About" Click="AboutAppsExplorer_Click" FontSize="14" FontWeight="Bold"
+                          Icon="{iconPacks:Material Kind=CommentText}" ToolTip="Show about information for AppsExplorer"/>
+                <MenuItem Header="Help" Click="HelpAppsExplorer_Click" FontSize="14" FontWeight="Bold"
+                          Icon="{iconPacks:Material Kind=HelpBox}" ToolTip="Show help information for AppsExplorer"/>
+            </MenuItem>
+
+        </Menu>
+
+        <!-- 主框架定义 -->
+        <ScrollViewer Grid.Row="1"><!--主框架-->
+            <StackPanel Margin="5">
+                <!-- 收缩栏x2：功能区+设置区 -->
+
+                <!-- 收缩栏1设置 -->
+                <Expander Margin="0" Header="Apps" FontWeight="ExtraBold" IsExpanded="True" Controls:ControlsHelper.ContentCharacterCasing="Normal" Controls:ControlsHelper.HeaderFontSize="16" FontSize="14">
+                    <!-- 收缩栏：功能区【Apps】 -->
+                    <StackPanel>
+                        <Controls:MetroTabControl Name="appTabControl"  Margin="10,0,0,0"  FontSize="18" Cursor="Hand"
+                                                  TabItemClosingEvent="MetroTabControl_TabItemClosingEvent"
+                                                  TabStripPlacement="Left" dragdrop:DragDrop.IsDragSource="True" dragdrop:DragDrop.IsDropTarget="True"
+                                                  Controls:TabControlHelper.Underlined="SelectedTabItem" >
+
+                            <Controls:MetroTabControl.ContentTemplate>
+                                <DataTemplate>
+                                    <StackPanel Margin="50,5,10,5">
+                                        <Border BorderThickness="1,1,1,1" BorderBrush="{DynamicResource AccentColorBrush}"  CornerRadius="5" Margin="1">
+                                            <ListBox ItemsSource="{Binding appItems}"  Name="appListbox" Margin="10,0,0,0"
+                                                dragdrop:DragDrop.IsDragSource="True" dragdrop:DragDrop.IsDropTarget="True"
+                                                Controls:TabControlHelper.Underlined="None">
+                                                <ListBox.ItemTemplate>
+                                                    <!--重写APP列表的模板，包括4个控件：APP名称；APP描述；APP运行（按钮）；APP卸载（按钮） -->
+                                                    <DataTemplate>
+                                                        <Border BorderThickness="0,0,0,1" BorderBrush="Teal"  CornerRadius="0" Margin="2">
+                                                            <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal">
+                                                                <Grid>
+                                                                    <Grid.ColumnDefinitions>
+                                                                        <ColumnDefinition/>
+                                                                        <ColumnDefinition/>
+                                                                        <ColumnDefinition/>
+                                                                        <ColumnDefinition/>
+                                                                    </Grid.ColumnDefinitions>
+                                                                    <!--APP名称以及描述 -->
+                                                                    <TextBlock Grid.Column="0" Text="{Binding AppName}" FontWeight="Bold" Margin="1" Width="300" />
+                                                                    <TextBlock Grid.Column="1" Text="{Binding AppDescription}"  VerticalAlignment="Center" FontSize="10" Margin="1" Width="500"/>
+                                                                    <!--定义运行APP的按钮 -->
+                                                                    <Button x:Name="btnRunApp" Grid.Column="2"  Content="{iconPacks:Material Kind=ArrowLeftBoldCircleOutline,Flip=Both}" 
+                                                                            Margin="1" Background="Transparent" BorderThickness="0" Width="30" Tag="{Binding AppGUID}" IsTabStop="False" Click="btnRunApp_Click">
+                                                                        <Button.ToolTip>
+                                                                            <ToolTip Placement="Bottom">
+                                                                                <TextBlock Text="Run App"/>
+                                                                            </ToolTip>
+                                                                        </Button.ToolTip>
+                                                                    </Button>
+                                                                    <!--定义删除APP的按钮 -->
+                                                                    <Button x:Name="btnRemoveAPP" Grid.Column="3" Content="{iconPacks:Material Kind=Backspace,Flip=Both}"
+                                                                            Margin="1" Background="Transparent" BorderThickness="0" Width="30" Tag="{Binding AppGUID}" IsTabStop="False" Click="btnRemoveAPP_Click">
+                                                                        <Button.ToolTip>
+                                                                            <ToolTip Placement="Bottom">
+                                                                                <TextBlock Text="Remove App"/>
+                                                                            </ToolTip>
+                                                                        </Button.ToolTip>
+                                                                    </Button>
+                                                                    <!--定义结束 -->
+                                                                </Grid>
+                                                            </StackPanel>
+                                                        </Border>
+                                                    </DataTemplate>
+                                                </ListBox.ItemTemplate>
+                                            </ListBox>
+                                        </Border>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </Controls:MetroTabControl.ContentTemplate>
+                            <!--初始化部分属性-->
+                            <Controls:MetroTabControl.ItemContainerStyle>
+                                <Style TargetType="{x:Type Controls:MetroTabItem}">
+                                    <Setter Property="Header" Value="{Binding AppGroupName}"/>
+                                    <Setter Property="BorderThickness" Value="0,0,0,2"/>
+                                    <Setter Property="CloseButtonEnabled" Value="True"/>
+                                    <Setter Property="Controls:ControlsHelper.HeaderFontSize" Value="20"/>
+                                    <Setter Property="Controls:ControlsHelper.HeaderFontWeight" Value="ExtraBold"/>
+                                </Style>
+                            </Controls:MetroTabControl.ItemContainerStyle>
+                        </Controls:MetroTabControl>
+                        
+                    </StackPanel>
+                </Expander>
+
+                <!-- 收缩栏2设置 -->
+                <Expander Margin="0" Header="Settings" FontWeight="ExtraBold" IsExpanded="False" Controls:ControlsHelper.ContentCharacterCasing="Normal" Controls:ControlsHelper.HeaderFontSize="16" FontSize="14">
+                    <!-- 收缩栏：设置区【Settings】 -->
+                    <StackPanel>
+                        <Controls:ToggleSwitch x:Name="enabledClosedSaveCurrentLayout" Margin="10,2,10,2" Header="Auto save current APPs layout settings when Windows closed?" IsChecked="{Binding Path=autoSaveLayout,Source={x:Static Properties:Settings.Default}}"
+                                           OffLabel="NO" OnLabel="YES" Style="{StaticResource MahApps.Metro.Styles.ToggleSwitch.Win10}" />
+                        <StackPanel Orientation="Horizontal">
+                            <Controls:ToggleSwitch x:Name="showDialogwhenDeleteAPPGroup" Margin="10,2,10,2" Header="Always asking when trying to delete APPs Group?" IsChecked="{Binding Path=askDelAppGroup,Source={x:Static Properties:Settings.Default}}" 
+                                           OffLabel="NO" OnLabel="YES" Style="{StaticResource MahApps.Metro.Styles.ToggleSwitch.Win10}" />
+                            <Controls:ToggleSwitch x:Name="showDialogwhenDeleteAPP" Margin="40,2,10,2" Header="Always asking when trying to delete APP?" IsChecked="{Binding Path=askDelApp,Source={x:Static Properties:Settings.Default}}"
+                                           OffLabel="NO" OnLabel="YES" Style="{StaticResource MahApps.Metro.Styles.ToggleSwitch.Win10}" />
+                        </StackPanel>
+                        <Border BorderThickness="1" BorderBrush="{DynamicResource AccentColorBrush}"  CornerRadius="5" Margin="0,20,0,10"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Label  Margin="5,0,0,0" Content="{iconPacks:Modern Kind=City, Flip=Both,Rotation=180}" 
+                                    Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" />
+                            <Button  Margin="20,0,0,0" Content="Click to Visit GitHub for source code." Click="LaunchAppsExplorerOnGitHub"
+                                    Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" Controls:ControlsHelper.ContentCharacterCasing="Normal" />
+                        </StackPanel>
+                    </StackPanel>
+
+                </Expander>
+                
+            </StackPanel>
+        </ScrollViewer>
+        <!-- 主框架结束 -->
+        <!--底部信息栏-->
+        <StatusBar Grid.Row="2">
+            <iconPacks:Modern Kind="SocialAppleMobileme" Flip="Both" Rotation="180"/>
+            <StatusBarItem Content="Apps Explorer" Margin="5,0,10,0"/>
+            <Separator Style="{StaticResource MetroStatusBarSeparator}" />
+            <iconPacks:Material Kind="Account" Flip="Both" Rotation="180"/>
+            <TextBlock Name="showUser" Margin="10,0,30,0"/>
+            <Separator Style="{StaticResource MetroStatusBarSeparator}" />
+            <iconPacks:Material Kind="Domain" Flip="Both" Rotation="180"/>
+            <TextBlock Name="showUserDomain" Margin="10,0,30,0"/>
+            <Separator Style="{StaticResource MetroStatusBarSeparator}" />
+            <iconPacks:FontAwesome Kind="DesktopSolid" Flip="Both" Rotation="180"/>
+            <TextBlock Name="showComputer" Margin="10,0,30,0"/>
+            <Separator Style="{StaticResource MetroStatusBarSeparator}" />
+            <iconPacks:Entypo Kind="Address" Flip="Both" Rotation="180"/>
+            <TextBlock Name="showIP" Margin="10,0,30,0"/>
+            <Separator Style="{StaticResource MetroStatusBarSeparator}" />
+            <iconPacks:Octicons Kind="Calendar" Flip="Both" Rotation="180"/>
+            <TextBlock Name="showDate" Margin="10,0,10,0"/>
+        </StatusBar>
+    </Grid>
+
+</Controls:MetroWindow>

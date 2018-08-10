@@ -1,0 +1,27 @@
+﻿<Controls:MetroWindow x:Class="AppsExplorer.processBar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:local="clr-namespace:AppsExplorer"
+        mc:Ignorable="d"
+        Title="Process Bar" Height="120" Width="300" WindowStartupLocation="CenterOwner" Loaded="action_Loaded"
+                      WindowStyle="None" ShowCloseButton="False" ShowIconOnTitleBar="False"
+                      ShowInTaskbar="False" ShowMaxRestoreButton="False" ShowMinButton="False"
+                      ShowSystemMenuOnRightClick="False" ShowTitleBar="False" ShowDialogsOverTitleBar="False" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Name="infoMain"  Foreground="{DynamicResource AccentColorBrush}" FontSize="18" FontWeight="ExtraBold" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="1" Name="infoSub" Foreground="{DynamicResource AccentColorBrush}" FontSize="14" FontWeight="ExtraBold" HorizontalAlignment="Center"/>
+        <StackPanel Grid.Row="2">
+            <Border Grid.Row="2" BorderThickness="1" BorderBrush="{DynamicResource AccentColorBrush}"  Margin="0 10 0 0"/>
+            <Controls:ProgressRing Width="40" Height="40" Margin="0 10 0 0" />
+        </StackPanel>
+    </Grid>
+</Controls:MetroWindow>

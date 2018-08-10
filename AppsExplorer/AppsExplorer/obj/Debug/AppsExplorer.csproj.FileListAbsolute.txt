@@ -1,0 +1,73 @@
+D:\study\C#\Project\AppsExplorer\AppsExplorer\bin\Debug\AppsExplorer.exe.config
+D:\study\C#\Project\AppsExplorer\AppsExplorer\bin\Debug\AppsData\AppsData.db3
+D:\study\C#\Project\AppsExplorer\AppsExplorer\bin\Debug\AppsExplorer.exe
+D:\study\C#\Project\AppsExplorer\AppsExplorer\bin\Debug\AppsExplorer.pdb
+D:\study\C#\Project\AppsExplorer\AppsExplorer\obj\Debug\About.g.cs
+D:\study\C#\Project\AppsExplorer\AppsExplorer\obj\Debug\makeAppZip.g.cs
+D:\study\C#\Project\AppsExplorer\AppsExplorer\obj\Debug\addAppItem.g.cs
+D:\study\C#\Project\AppsExplorer\AppsExplorer\obj\Debug\MainWindow.g.cs
+D:\study\C#\Project\AppsExplorer\AppsExplorer\obj\Debug\App.g.cs
+D:\study\C#\Project\AppsExplorer\AppsExplorer\obj\Debug\AppsExplorer_MarkupCompile.cache
+D:\study\C#\Project\AppsExplorer\AppsExplorer\obj\Debug\AppsExplorer_MarkupCompile.lref
+D:\study\C#\Project\AppsExplorer\AppsExplorer\obj\Debug\App.baml
+D:\study\C#\Project\AppsExplorer\AppsExplorer\obj\Debug\About.baml
+D:\study\C#\Project\AppsExplorer\AppsExplorer\obj\Debug\makeAppZip.baml
+D:\study\C#\Project\AppsExplorer\AppsExplorer\obj\Debug\addAppItem.baml
+D:\study\C#\Project\AppsExplorer\AppsExplorer\obj\Debug\MainWindow.baml
+D:\study\C#\Project\AppsExplorer\AppsExplorer\obj\Debug\AppsExplorer.g.resources
+D:\study\C#\Project\AppsExplorer\AppsExplorer\obj\Debug\AppsExplorer.Properties.Resources.resources
+D:\study\C#\Project\AppsExplorer\AppsExplorer\obj\Debug\AppsExplorer.csproj.GenerateResource.Cache
+D:\study\C#\Project\AppsExplorer\AppsExplorer\obj\Debug\AppsExplorer.exe
+D:\study\C#\Project\AppsExplorer\AppsExplorer\obj\Debug\AppsExplorer.pdb
+D:\study\C#\Project\AppsExplorer\AppsExplorer\obj\Debug\processBar.g.cs
+D:\study\C#\Project\AppsExplorer\AppsExplorer\obj\Debug\processBar.baml
+D:\study\C#\Project\AppsExplorer\AppsExplorer\obj\Debug\AppsGroupPackage.g.cs
+D:\study\C#\Project\AppsExplorer\AppsExplorer\obj\Debug\AppsGroupPackage.baml
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\bin\Debug\AppsExplorer.exe.config
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\obj\Debug\AppsExplorer.exe
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\obj\Debug\AppsExplorer.pdb
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\bin\Debug\AppsData\AppsData.db3
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\bin\Debug\AppsExplorer.exe
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\bin\Debug\AppsExplorer.pdb
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\bin\Debug\ControlzEx.dll
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\bin\Debug\EntityFramework.dll
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\bin\Debug\Gat.Controls.OpenDialog.dll
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\bin\Debug\GongSolutions.Wpf.DragDrop.dll
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\bin\Debug\MahApps.Metro.dll
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\bin\Debug\MahApps.Metro.IconPacks.dll
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\bin\Debug\System.Data.SQLite.dll
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\bin\Debug\ControlzEx.pdb
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\bin\Debug\EntityFramework.xml
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\bin\Debug\GongSolutions.Wpf.DragDrop.pdb
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\bin\Debug\GongSolutions.Wpf.DragDrop.xml
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\bin\Debug\MahApps.Metro.pdb
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\bin\Debug\MahApps.Metro.xml
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\bin\Debug\MahApps.Metro.IconPacks.pdb
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\bin\Debug\MahApps.Metro.IconPacks.xml
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\bin\Debug\System.Data.SQLite.xml
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\obj\Debug\AppsExplorer.csprojResolveAssemblyReference.cache
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\obj\Debug\About.g.cs
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\obj\Debug\AppsGroupPackage.g.cs
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\obj\Debug\makeAppZip.g.cs
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\obj\Debug\addAppItem.g.cs
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\obj\Debug\MainWindow.g.cs
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\obj\Debug\processBar.g.cs
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\obj\Debug\App.g.cs
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\obj\Debug\AppsExplorer_MarkupCompile.cache
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\obj\Debug\AppsExplorer_MarkupCompile.lref
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\obj\Debug\App.baml
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\obj\Debug\About.baml
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\obj\Debug\AppsGroupPackage.baml
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\obj\Debug\makeAppZip.baml
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\obj\Debug\addAppItem.baml
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\obj\Debug\MainWindow.baml
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\obj\Debug\processBar.baml
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\obj\Debug\AppsExplorer.g.resources
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\obj\Debug\AppsExplorer.Properties.Resources.resources
+C:\Users\Guo Xiang\Desktop\AppsExplorer\AppsExplorer\obj\Debug\AppsExplorer.csproj.GenerateResource.Cache
